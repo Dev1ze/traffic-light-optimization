@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Red : MonoBehaviour
 {
     MeshRenderer meshRenderer;
-    void Awake()
+    private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
     }

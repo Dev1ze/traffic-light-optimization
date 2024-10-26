@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    public class Unsubscriber : IDisposable
+    public class Subscribers : IDisposable
     {
-        private List<IObserver<bool>> observers;
-        private IObserver<bool> observer;
-
-        public Unsubscriber(List<IObserver<bool>> observers, IObserver<bool> observer)
+        public Subscribers(List<IObserver<bool>> observers, IObserver<bool> observer)
         {
             this.observers = observers;
             this.observer = observer;
         }
 
+        private readonly List<IObserver<bool>> observers;
+        private readonly IObserver<bool> observer;
         public void Dispose()
         {
             if (observers.Contains(observer))
